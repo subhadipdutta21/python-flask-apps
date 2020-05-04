@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Posts</title>
+<h1>Your posts-</h1>
+{% endblock %}
+
+{% block body %}
+<hr>
+<h3>Create new posts-</h3>
+<form action="/posts" method="POST">
+    <p>Title : </p><input type="text" id="title" name="title" />
+    <br>
+    <p>Content :</p> <input type="text" id="content" name="content" />
+    <br>
+    <input type="submit" value="post" />
+</form>
+<hr>
+{% for post in posts %}
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+{% endfor %}
+{% endblock %}
